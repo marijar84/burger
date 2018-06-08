@@ -26,8 +26,6 @@ $(function () {
 
     var burgerName = $("#bur").val().trim();
 
-    alert(burgerName);
-
     if (burgerName == "") {
       alert("Please, fill out the Burger Name");
       return;
