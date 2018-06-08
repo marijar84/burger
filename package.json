@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/marijar84/burger/issues"
   },
-  "homepage": "https://github.com/marijar84/burger#readme"
+  "homepage": "https://github.com/marijar84/burger#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
