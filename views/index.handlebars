@@ -1,40 +1,39 @@
-<h1>Burgers!</h1>
-
-<ul>
-    {{#each burgers}} 
-        {{#if devoured}}
-            <h1>{{burger_name}}</h1>
-            <button class="update-burger" data-id="{{this.id}}" data-newdevoured="false">Devoured!</button>
-        {{/if}} 
-    {{/each}}
-</ul>
-
-<h1>Not devoured</h1>
-
-<ul>
-    {{#each burgers}} 
-        {{#unless devoured}}
-            <h1>{{burger_name}}</h1>
-            <button class="update-burger" data-id="{{this.id}}" data-newdevoured="true">Devoured!</button>
-        {{/unless}} 
-    {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-    <div class="form-group">
-        <label for="bur">Burger Name:</label>
-        <input type="text" id="bur" name="burger_name">
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <form class="create-form">
+                <h2>Add a Burger</h2>
+                <div class="form-group">
+                    <label for="bur">Burger Name:</label>
+                    <input type="text" id="bur" name="burger_name">
+                </div>
+                <button type="submit" id="submit">Add Burger</button>
+            </form>
+        </div>
     </div>
+</div>
 
-    <div class="form-group">
-        <label for="devoured">Devoured?</label>
-        <br>
-        <input type="radio" name="devoured" value="1" checked>Devoured!
-        <br>
-        <input type="radio" name="devoured" value="0">Not devoured
+<br/>
+<br/>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+           <ul>
+                {{#each burgers}} {{#unless devoured}}
+                <h2>{{burger_name}}</h2>
+                <button class="update-burger" id="devou" data-id="{{this.id}}" data-newdevoured="true">Devoured!</button>
+                {{/unless}} {{/each}}
+            </ul>
+        </div>
     </div>
-
-    <button type="submit">Add Burger</button>
-</form>
+    <div class="col-md-6">
+        <div class="row">
+             <ul>
+                {{#each burgers}} {{#if devoured}}
+                <h2>{{burger_name}}</h2>
+                <!--<button class="update-burger" id="notDevou" data-id="{{this.id}}" data-newdevoured="false">Not Devoured!</button-->
+                {{/if}} {{/each}}
+            </ul>            
+        </div>
+    </div>
